@@ -7,9 +7,9 @@ age → number
 isStudent → boolean
 তারপর তিনটাকে console.log() করো।
 */
-const userName:string = "MD SABER MAHMUD";
-const age:number = 30;
-const isStudent:boolean = true;
+// const userName:string = "MD SABER MAHMUD";
+// const age:number = 30;
+// const isStudent:boolean = true;
 // console.log(userName, age, isStudent)
 /*
 2️⃣ Array Type
@@ -20,10 +20,10 @@ const isStudent:boolean = true;
 */
 
 
-const numbers:number[]=[10, 20, 30, 40, 50]
-const total:number =numbers.reduce((accumulator, currentValue):number => {
-    return accumulator + currentValue
-},0)
+// const numbers:number[]=[10, 20, 30, 40, 50]
+// const total:number =numbers.reduce((accumulator, currentValue):number => {
+//     return accumulator + currentValue
+// },0)
 // console.log(total)
 
 
@@ -38,7 +38,7 @@ MongoDB
 তারপর loop ব্যবহার করে প্রত্যেকটা skill আলাদা আলাদাভাবে console-এ print করো।
 */
 
-const skills:string[] =["JavaScript", "TypeScript", "React", "Node.js", "MongoDB"];
+// const skills:string[] =["JavaScript", "TypeScript", "React", "Node.js", "MongoDB"];
 // console.log(skills)
 // skills.forEach((skill):void => console.log(skill))
 
@@ -53,20 +53,20 @@ isDeveloper → boolean
 তারপর User type ব্যবহার করে একটি object তৈরি করো।
 */
 
-type User = {
-    name:string,
-    age: number,
-    email: string,
-    isDeveloper: boolean
-}
-const user:User = {
-    name: "Saber",
-    age: 30,
-    email: "sabermahmud29@gmail.com",
-    isDeveloper: true
-}
+// type User = {
+//     name:string,
+//     age: number,
+//     email: string,
+//     isDeveloper: boolean
+// }
+// const user:User = {
+//     name: "Saber",
+//     age: 30,
+//     email: "sabermahmud29@gmail.com",
+//     isDeveloper: true
+// }
 
-console.log(user)
+// console.log(user)
 /*
 5️⃣ Object Array
 Product নামে একটি type তৈরি করো:
@@ -74,12 +74,41 @@ name → string
 price → number
 category → string
 তারপর ৩টা product-এর array তৈরি করো।
-Example:
+Example:.
 Laptop
 Phone
 Keyboard
-তারপর সব product-এর নাম print করো।
+তারপর সব product-এর 
 */
+type Product = {
+  productName: string;
+  price: number;
+  category: string;
+}
+const products: Product[] = [
+  {
+    productName: "laptop",
+    price: 1000,
+    category: "electronics"
+  },
+  {
+    productName: "laptop",
+    price: 2000,
+    category: "electronics"
+  },
+  {
+    productName: "phone",
+    price: 1000,
+    category: "electronics"
+  },
+  {
+    productName: "Keyboard",
+    price: 400,
+    category: "accessories"
+  }
+]
+
+products.forEach(product => console.log(product.productName))
 
 /*
 6️⃣ Function Parameter Type
@@ -169,4 +198,4 @@ Example output:
 
 
 
-// export {};
+// export { };

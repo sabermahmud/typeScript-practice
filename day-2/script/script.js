@@ -1,60 +1,28 @@
 "use strict";
 console.log("connected");
-/**
-1️⃣ Basic Type Annotation
-তিনটা variable তৈরি করো:
-name → string
-age → number
-isStudent → boolean
-তারপর তিনটাকে console.log() করো।
-*/
-const userName = "MD SABER MAHMUD";
-const age = 30;
-const isStudent = true;
-// console.log(userName, age, isStudent)
-/*
-2️⃣ Array Type
-একটা numbers array তৈরি করো যেখানে শুধু number থাকবে:
-10, 20, 30, 40, 50
-তারপর array-এর সবগুলো number-এর যোগফল বের করো।
-
-*/
-const numbers = [10, 20, 30, 40, 50];
-const total = numbers.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-}, 0);
-// console.log(total)
-/*
-3️⃣ String Array
-একটা skills array তৈরি করো:
-JavaScript
-TypeScript
-React
-Node.js
-MongoDB
-তারপর loop ব্যবহার করে প্রত্যেকটা skill আলাদা আলাদাভাবে console-এ print করো।
-*/
-const skills = ["JavaScript", "TypeScript", "React", "Node.js", "MongoDB"];
-const user = {
-    name: "Saber",
-    age: 30,
-    email: "sabermahmud29@gmail.com",
-    isDeveloper: true
-};
-console.log(user);
-/*
-5️⃣ Object Array
-Product নামে একটি type তৈরি করো:
-name → string
-price → number
-category → string
-তারপর ৩টা product-এর array তৈরি করো।
-Example:
-Laptop
-Phone
-Keyboard
-তারপর সব product-এর নাম print করো।
-*/
+const products = [
+    {
+        productName: "laptop",
+        price: 1000,
+        category: "electronics"
+    },
+    {
+        productName: "laptop",
+        price: 2000,
+        category: "electronics"
+    },
+    {
+        productName: "phone",
+        price: 1000,
+        category: "electronics"
+    },
+    {
+        productName: "Keyboard",
+        price: 400,
+        category: "accessories"
+    }
+];
+products.forEach(product => console.log(product.productName));
 /*
 6️⃣ Function Parameter Type
 একটা function বানাও:
@@ -131,4 +99,4 @@ Example output:
   storage: 256
 }
  */
-// export {};
+// export { };
