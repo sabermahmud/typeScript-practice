@@ -18,11 +18,15 @@ const isStudent:boolean = true;
 তারপর array-এর সবগুলো number-এর যোগফল বের করো।
 
 */
+
+
 const numbers:number[]=[10, 20, 30, 40, 50]
-const total:number =numbers.reduce((accumulator, currentValue) => {
+const total:number =numbers.reduce((accumulator, currentValue):number => {
     return accumulator + currentValue
-})
-console.log(total)
+},0)
+// console.log(total)
+
+
 /*
 3️⃣ String Array
 একটা skills array তৈরি করো:
@@ -34,7 +38,9 @@ MongoDB
 তারপর loop ব্যবহার করে প্রত্যেকটা skill আলাদা আলাদাভাবে console-এ print করো।
 */
 
-
+const skills:string[] =["JavaScript", "TypeScript", "React", "Node.js", "MongoDB"];
+console.log(skills)
+skills.forEach((skill):void => console.log(skill))
 
 /*
 4️⃣ Object Type
@@ -149,4 +155,4 @@ Example output:
 
 
 
-export {};
+// export {};
