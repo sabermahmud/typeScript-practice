@@ -39,8 +39,8 @@ MongoDB
 */
 
 const skills:string[] =["JavaScript", "TypeScript", "React", "Node.js", "MongoDB"];
-console.log(skills)
-skills.forEach((skill):void => console.log(skill))
+// console.log(skills)
+// skills.forEach((skill):void => console.log(skill))
 
 /*
 4️⃣ Object Type
@@ -53,6 +53,20 @@ isDeveloper → boolean
 তারপর User type ব্যবহার করে একটি object তৈরি করো।
 */
 
+type User = {
+    name:string,
+    age: number,
+    email: string,
+    isDeveloper: boolean
+}
+const user:User = {
+    name: "Saber",
+    age: 30,
+    email: "sabermahmud29@gmail.com",
+    isDeveloper: true
+}
+
+console.log(user)
 /*
 5️⃣ Object Array
 Product নামে একটি type তৈরি করো:

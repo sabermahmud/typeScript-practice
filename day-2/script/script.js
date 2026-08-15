@@ -35,18 +35,13 @@ MongoDB
 তারপর loop ব্যবহার করে প্রত্যেকটা skill আলাদা আলাদাভাবে console-এ print করো।
 */
 const skills = ["JavaScript", "TypeScript", "React", "Node.js", "MongoDB"];
-console.log(skills);
-skills.forEach((skill) => console.log(skill));
-/*
-4️⃣ Object Type
-একজন user-এর জন্য একটি User type তৈরি করো।
-তার properties:
-name → string
-age → number
-email → string
-isDeveloper → boolean
-তারপর User type ব্যবহার করে একটি object তৈরি করো।
-*/
+const user = {
+    name: "Saber",
+    age: 30,
+    email: "sabermahmud29@gmail.com",
+    isDeveloper: true
+};
+console.log(user);
 /*
 5️⃣ Object Array
 Product নামে একটি type তৈরি করো:
