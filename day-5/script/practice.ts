@@ -112,35 +112,35 @@ Practice 5 ⭐
 Practice 1
 একটি function তৈরি করো যেটা দুইটি number গ্রহণ করে তাদের যোগফল return করবে।
 */
-const getSum = (a: number, b: number): number => {
-    const sum: number = a + b;
-    return sum;
-}
-console.log(getSum(2, 5))
+// const getSum = (a: number, b: number): number => {
+//     const sum: number = a + b;
+//     return sum;
+// }
+// console.log(getSum(2, 5))
 /*
 Practice 2
 একটি function তৈরি করো যেটা একজন মানুষের name গ্রহণ করে এবং একটি greeting string return করবে।
 */
-const getGreeting = (person: string): string => {
+// const getGreeting = (person: string): string => {
 
-    return `Hello ${person}`;
-}
-console.log(getGreeting("Khalid"))
+//     return `Hello ${person}`;
+// }
+// console.log(getGreeting("Khalid"))
 /*
 
 
 Practice 3
 একটি function তৈরি করো যেটা একটি number গ্রহণ করবে এবং number-টি even নাকি odd সেটা return করবে।
 */
-const checkEvenOrOdd = (number:number):string => {
-    if(number % 2 === 0){
-        return `${number} is even`
-    }
-    else{
-        return `${number} is odd`
-    }
-}
-console.log(checkEvenOrOdd(29))
+// const checkEvenOrOdd = (number:number):string => {
+//     if(number % 2 === 0){
+//         return `${number} is even`
+//     }
+//     else{
+//         return `${number} is odd`
+//     }
+// }
+// console.log(checkEvenOrOdd(29))
 /*
 Practice 4
 একটি function তৈরি করো যেখানে:
@@ -148,22 +148,22 @@ name: string
 age: number
 parameter থাকবে এবং void return করবে।
 */
-const userInfo = (name:string, age:number):void => {
+// const userInfo = (name:string, age:number):void => {
 
-  console.log(name + " " + age)  
-}
-userInfo("Saber", 30)
+//   console.log(name + " " + age)  
+// }
+// userInfo("Saber", 30)
 /*
 Practice 5 ⭐
 একটি function তৈরি করো যেটা একটি number[] গ্রহণ করবে এবং array-এর সব সংখ্যার যোগফল return করবে।
 */
-const getSumOfAll = (numbers:number[]):number => {
-    const total = numbers.reduce((accumulator, currentValue) => {
-        return accumulator + currentValue
-    },0)
-    return total
-}
-console.log(getSumOfAll([20, 30, 56, 90, 10]))
+// const getSumOfAll = (numbers:number[]):number => {
+//     const total = numbers.reduce((accumulator, currentValue) => {
+//         return accumulator + currentValue
+//     },0)
+//     return total
+// }
+// console.log(getSumOfAll([20, 30, 56, 90, 10]))
 /*
 
 
@@ -173,58 +173,148 @@ console.log(getSumOfAll([20, 30, 56, 90, 10]))
 
 4️⃣ Object — ৫টি Practice
 Practice 1
-
 একজন user-এর object তৈরি করো:
-
 name
 age
 email
 isDeveloper
-
 প্রতিটির সঠিক Type দাও।
 
+*/
+type UserInfo = {
+    name: string;
+    age: number;
+    email: string;
+    isDeveloper: boolean;
+}
+const userInfo: UserInfo = {
+    name: "Saber",
+    age: 30,
+    email: "sabermahmud01@gmail.com",
+    isDeveloper: true
+}
+console.log(userInfo)
+/*
+
 Practice 2
-
 একটি Car object তৈরি করো:
-
 brand
 model
 year
 price
+
+*/
+type Car = {
+    brand: string;
+    model: string;
+    year: number;
+    price: number;
+}
+const car: Car = {
+    brand: "Toyota",
+    model: "Yeris",
+    year: 2026,
+    price: 45000
+}
+
+console.log(car)
+/*
+
 Practice 3
-
 একটি Student object তৈরি করো:
-
 name
 age
 department
 isPassed
+
+*/
+type Student = {
+    name: string;
+    age: number;
+    department: string;
+    isPassed: boolean
+}
+const student: Student = {
+    name: "Khalid",
+    age: 25,
+    department: "CSE",
+    isPassed: true
+}
+
+console.log(student)
+/*
+
 Practice 4
-
 একটি nested object তৈরি করো:
-
 user
  ├── name
  ├── age
  └── address
       ├── city
       └── country
-
 প্রতিটি property-এর type declare করো।
 
+*/
+type User = {
+    name: string;
+    age: number;
+    address: {
+        city: string;
+        country: string;
+    }
+}
+
+const user: User = {
+    name: "Samir",
+    age: 22,
+    address: {
+        city: "Dhaka",
+        country: "Bangladesh"
+    }
+}
+console.log(user)
+/*
+
 Practice 5 ⭐
-
 একটি Product object তৈরি করো যেখানে থাকবে:
-
 name
 price
 category
 inStock
 quantity
-
 তারপর একটি function তৈরি করো যেটা product object গ্রহণ করবে।
 
+*/
+type Product = {
+    name: string;
+    price: number;
+    category: string;
+    inStock: boolean;
+    quantity: number;
 
+}
+
+const product: Product ={
+    name: "Mouse",
+    price: 300,
+    category: "Accessories",
+    inStock: true,
+    quantity: 3,
+}
+
+
+
+const getProduct = (productInfo:Product):string => {
+    const {name, price, category, inStock, quantity} = {...productInfo}
+
+    return `name:${name},
+            price:${price},
+            category: ${category},
+            stock:${inStock},
+            quantity: ${quantity} `
+}
+    console.log(getProduct(product))
+/*
 
 //--------------------------------------------------
 

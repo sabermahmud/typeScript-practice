@@ -1,226 +1,58 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 console.log("connected");
-/*
-1️⃣ Variable — ৫টি Practice
-Practice 1
-একটি name variable তৈরি করো যার type হবে string এবং value হবে তোমার নাম।
-*/
-// let name:string = "Saber";
-// console.log(name)
-/*
-Practice 2
-একটি age variable তৈরি করো যার type হবে number।
-*/
-// let age:number = 30;
-// console.log(age);
-/*
-Practice 3
-একটি isStudent variable তৈরি করো যার type হবে boolean।
-*/
-// let isStudent:boolean = true;
-// console.log(isStudent)
-/*
-Practice 4
-একটি salary variable তৈরি করো যার type হবে number এবং পরে তার value পরিবর্তন করো।
-*/
-// let salary:number = 1500;
-//  salary = 1700;
-//  console.log(salary)
-/*
-Practice 5 ⭐
-একটি country variable তৈরি করো। Type explicitly string declare করো এবং পরে ভুল করে number assign করার চেষ্টা করো। TypeScript কী error দেয় সেটা দেখো।
-*/
-// let country:string = "Bangladesh";
-// country = 123;
-// console.log(country)
-/*
-
-
-//--------------------------------------------------
-
-
-
-2️⃣ Array — ৫টি Practice
-Practice 1
-শুধু string রাখবে এমন একটি array তৈরি করো:
-["HTML", "CSS", "JavaScript", ...]
-কমপক্ষে ৫টি technology রাখো।
-*/
-// const courses: string[] = ["HTML", "CSS", "JavaScript", "TypeScript", "React"];
-// console.log(courses);
-/*
-Practice 2
-শুধু number রাখবে এমন একটি array তৈরি করো এবং ৫টি সংখ্যা রাখো।
-*/
-// const numbers: number[] = [23, 52, 36, 98, 62];
-// console.log(numbers);
-/*
-Practice 3
-একটি boolean[] array তৈরি করো যেখানে ৫টি boolean value থাকবে।
-*/
-// const conditions: boolean[] = [true, false, true, true, false];
-// console.log(conditions);
-/*
-Practice 4
-একটি Product object-এর array তৈরি করো। প্রতিটি product-এর থাকবে:
-name
-price
-category
-কমপক্ষে ৩টি product রাখো।
-*/
-// const products: object[] = [
-//     {
-//         name: "laptop",
-//         price: 2000,
-//         category: "computer"
-//     },
-//     {
-//         name: "Monitor",
-//         price: 400,
-//         category: "computer-accessories"
-//     },
-//     {
-//         name: "Mouse",
-//         price: 250,
-//         category: "computer-accessories"
-//     },
-//     {
-//         name: "Ram 16gb",
-//         price: 360,
-//         category: "computer-accessories"
-//     }
-// ]
-// console.log(products)
-/*
-Practice 5 ⭐
-একটি array তৈরি করো যেখানে একই সাথে string এবং number রাখা যাবে।
-উদাহরণ:
-["Saber", 30, "Saudi Arabia", 1700]
-*/
-// const user: (string | number)[] = ["Saber", 30, "Saudi Arabia", 1700];
-// console.log(user)
-/*
-
-
-//--------------------------------------------------
-
-
-
-
-3️⃣ Function — ৫টি Practice
-Practice 1
-একটি function তৈরি করো যেটা দুইটি number গ্রহণ করে তাদের যোগফল return করবে।
-*/
-var getSum = function (a, b) {
-    var sum = a + b;
-    return sum;
+var userInfo = {
+    name: "Saber",
+    age: 30,
+    email: "sabermahmud01@gmail.com",
+    isDeveloper: true
 };
-console.log(getSum(2, 5));
-/*
-Practice 2
-একটি function তৈরি করো যেটা একজন মানুষের name গ্রহণ করে এবং একটি greeting string return করবে।
-*/
-var getGreeting = function (person) {
-    return "Hello ".concat(person);
+console.log(userInfo);
+var car = {
+    brand: "Toyota",
+    model: "Yeris",
+    year: 2026,
+    price: 45000
 };
-console.log(getGreeting("Khalid"));
-/*
-
-
-Practice 3
-একটি function তৈরি করো যেটা একটি number গ্রহণ করবে এবং number-টি even নাকি odd সেটা return করবে।
-*/
-var checkEvenOrOdd = function (number) {
-    if (number % 2 === 0) {
-        return "".concat(number, " is even");
-    }
-    else {
-        return "".concat(number, " is odd");
+console.log(car);
+var student = {
+    name: "Khalid",
+    age: 25,
+    department: "CSE",
+    isPassed: true
+};
+console.log(student);
+var user = {
+    name: "Samir",
+    age: 22,
+    address: {
+        city: "Dhaka",
+        country: "Bangladesh"
     }
 };
-console.log(checkEvenOrOdd(29));
-/*
-Practice 4
-একটি function তৈরি করো যেখানে:
-name: string
-age: number
-parameter থাকবে এবং void return করবে।
-*/
-var userInfo = function (name, age) {
-    console.log(name + " " + age);
+console.log(user);
+var product = {
+    name: "Mouse",
+    price: 300,
+    category: "Accessories",
+    inStock: true,
+    quantity: 3
 };
-userInfo("Saber", 30);
-/*
-Practice 5 ⭐
-একটি function তৈরি করো যেটা একটি number[] গ্রহণ করবে এবং array-এর সব সংখ্যার যোগফল return করবে।
-*/
-var getSumOfAll = function (numbers) {
-    var total = numbers.reduce(function (accumulator, currentValue) {
-        return accumulator + currentValue;
-    }, 0);
-    return total;
+var getProduct = function (productInfo) {
+    var _a = __assign({}, productInfo), name = _a.name, price = _a.price, category = _a.category, inStock = _a.inStock, quantity = _a.quantity;
+    return "name:".concat(name, ",\n            price:").concat(price, ",\n            category: ").concat(category, ",\n            stock:").concat(inStock, ",\n            quantity: ").concat(quantity, " ");
 };
-console.log(getSumOfAll([20, 30, 56, 90, 10]));
+console.log(getProduct(product));
 /*
-
-
-//--------------------------------------------------
-
-
-
-4️⃣ Object — ৫টি Practice
-Practice 1
-
-একজন user-এর object তৈরি করো:
-
-name
-age
-email
-isDeveloper
-
-প্রতিটির সঠিক Type দাও।
-
-Practice 2
-
-একটি Car object তৈরি করো:
-
-brand
-model
-year
-price
-Practice 3
-
-একটি Student object তৈরি করো:
-
-name
-age
-department
-isPassed
-Practice 4
-
-একটি nested object তৈরি করো:
-
-user
- ├── name
- ├── age
- └── address
-      ├── city
-      └── country
-
-প্রতিটি property-এর type declare করো।
-
-Practice 5 ⭐
-
-একটি Product object তৈরি করো যেখানে থাকবে:
-
-name
-price
-category
-inStock
-quantity
-
-তারপর একটি function তৈরি করো যেটা product object গ্রহণ করবে।
-
-
 
 //--------------------------------------------------
 
