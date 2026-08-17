@@ -4,33 +4,34 @@ console.log("connected");
 Practice 1
 একটি name variable তৈরি করো যার type হবে string এবং value হবে তোমার নাম।
 */
-var name = "Saber";
-console.log(name);
+// let name:string = "Saber";
+// console.log(name)
 /*
 Practice 2
 একটি age variable তৈরি করো যার type হবে number।
 */
-var age = 30;
-console.log(age);
+// let age:number = 30;
+// console.log(age);
 /*
 Practice 3
 একটি isStudent variable তৈরি করো যার type হবে boolean।
 */
-var isStudent = true;
-console.log(isStudent);
+// let isStudent:boolean = true;
+// console.log(isStudent)
 /*
 Practice 4
 একটি salary variable তৈরি করো যার type হবে number এবং পরে তার value পরিবর্তন করো।
 */
-var salary = 1500;
-salary = 1700;
-console.log(salary);
+// let salary:number = 1500;
+//  salary = 1700;
+//  console.log(salary)
 /*
 Practice 5 ⭐
 একটি country variable তৈরি করো। Type explicitly string declare করো এবং পরে ভুল করে number assign করার চেষ্টা করো। TypeScript কী error দেয় সেটা দেখো।
 */
-var country = "Bangladesh";
-country = 123;
+// let country:string = "Bangladesh";
+// country = 123;
+// console.log(country)
 /*
 
 
@@ -40,39 +41,63 @@ country = 123;
 
 2️⃣ Array — ৫টি Practice
 Practice 1
-
 শুধু string রাখবে এমন একটি array তৈরি করো:
-
 ["HTML", "CSS", "JavaScript", ...]
-
 কমপক্ষে ৫টি technology রাখো।
-
+*/
+var courses = ["HTML", "CSS", "JavaScript", "TypeScript", "React"];
+console.log(courses);
+/*
 Practice 2
-
 শুধু number রাখবে এমন একটি array তৈরি করো এবং ৫টি সংখ্যা রাখো।
-
+*/
+var numbers = [23, 52, 36, 98, 62];
+console.log(numbers);
+/*
 Practice 3
-
 একটি boolean[] array তৈরি করো যেখানে ৫টি boolean value থাকবে।
-
+*/
+var conditions = [true, false, true, true, false];
+console.log(conditions);
+/*
 Practice 4
-
 একটি Product object-এর array তৈরি করো। প্রতিটি product-এর থাকবে:
-
 name
 price
 category
-
 কমপক্ষে ৩টি product রাখো।
-
+*/
+var products = [
+    {
+        name: "laptop",
+        price: 2000,
+        category: "computer"
+    },
+    {
+        name: "Monitor",
+        price: 400,
+        category: "computer-accessories"
+    },
+    {
+        name: "Mouse",
+        price: 250,
+        category: "computer-accessories"
+    },
+    {
+        name: "Ram 16gb",
+        price: 360,
+        category: "computer-accessories"
+    }
+];
+/*
 Practice 5 ⭐
-
 একটি array তৈরি করো যেখানে একই সাথে string এবং number রাখা যাবে।
-
 উদাহরণ:
-
 ["Saber", 30, "Saudi Arabia", 1700]
-
+*/
+var user = ["Saber", 30, "Saudi Arabia", 1700];
+console.log(user);
+/*
 
 
 //--------------------------------------------------
