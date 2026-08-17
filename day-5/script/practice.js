@@ -45,20 +45,20 @@ Practice 1
 ["HTML", "CSS", "JavaScript", ...]
 কমপক্ষে ৫টি technology রাখো।
 */
-var courses = ["HTML", "CSS", "JavaScript", "TypeScript", "React"];
-console.log(courses);
+// const courses: string[] = ["HTML", "CSS", "JavaScript", "TypeScript", "React"];
+// console.log(courses);
 /*
 Practice 2
 শুধু number রাখবে এমন একটি array তৈরি করো এবং ৫টি সংখ্যা রাখো।
 */
-var numbers = [23, 52, 36, 98, 62];
-console.log(numbers);
+// const numbers: number[] = [23, 52, 36, 98, 62];
+// console.log(numbers);
 /*
 Practice 3
 একটি boolean[] array তৈরি করো যেখানে ৫টি boolean value থাকবে।
 */
-var conditions = [true, false, true, true, false];
-console.log(conditions);
+// const conditions: boolean[] = [true, false, true, true, false];
+// console.log(conditions);
 /*
 Practice 4
 একটি Product object-এর array তৈরি করো। প্রতিটি product-এর থাকবে:
@@ -67,36 +67,37 @@ price
 category
 কমপক্ষে ৩টি product রাখো।
 */
-var products = [
-    {
-        name: "laptop",
-        price: 2000,
-        category: "computer"
-    },
-    {
-        name: "Monitor",
-        price: 400,
-        category: "computer-accessories"
-    },
-    {
-        name: "Mouse",
-        price: 250,
-        category: "computer-accessories"
-    },
-    {
-        name: "Ram 16gb",
-        price: 360,
-        category: "computer-accessories"
-    }
-];
+// const products: object[] = [
+//     {
+//         name: "laptop",
+//         price: 2000,
+//         category: "computer"
+//     },
+//     {
+//         name: "Monitor",
+//         price: 400,
+//         category: "computer-accessories"
+//     },
+//     {
+//         name: "Mouse",
+//         price: 250,
+//         category: "computer-accessories"
+//     },
+//     {
+//         name: "Ram 16gb",
+//         price: 360,
+//         category: "computer-accessories"
+//     }
+// ]
+// console.log(products)
 /*
 Practice 5 ⭐
 একটি array তৈরি করো যেখানে একই সাথে string এবং number রাখা যাবে।
 উদাহরণ:
 ["Saber", 30, "Saudi Arabia", 1700]
 */
-var user = ["Saber", 30, "Saudi Arabia", 1700];
-console.log(user);
+// const user: (string | number)[] = ["Saber", 30, "Saudi Arabia", 1700];
+// console.log(user)
 /*
 
 
@@ -107,30 +108,59 @@ console.log(user);
 
 3️⃣ Function — ৫টি Practice
 Practice 1
-
 একটি function তৈরি করো যেটা দুইটি number গ্রহণ করে তাদের যোগফল return করবে।
-
+*/
+var getSum = function (a, b) {
+    var sum = a + b;
+    return sum;
+};
+console.log(getSum(2, 5));
+/*
 Practice 2
-
 একটি function তৈরি করো যেটা একজন মানুষের name গ্রহণ করে এবং একটি greeting string return করবে।
+*/
+var getGreeting = function (person) {
+    return "Hello ".concat(person);
+};
+console.log(getGreeting("Khalid"));
+/*
+
 
 Practice 3
-
 একটি function তৈরি করো যেটা একটি number গ্রহণ করবে এবং number-টি even নাকি odd সেটা return করবে।
-
+*/
+var checkEvenOrOdd = function (number) {
+    if (number % 2 === 0) {
+        return "".concat(number, " is even");
+    }
+    else {
+        return "".concat(number, " is odd");
+    }
+};
+console.log(checkEvenOrOdd(29));
+/*
 Practice 4
-
 একটি function তৈরি করো যেখানে:
-
 name: string
 age: number
-
 parameter থাকবে এবং void return করবে।
-
+*/
+var userInfo = function (name, age) {
+    console.log(name + " " + age);
+};
+userInfo("Saber", 30);
+/*
 Practice 5 ⭐
-
 একটি function তৈরি করো যেটা একটি number[] গ্রহণ করবে এবং array-এর সব সংখ্যার যোগফল return করবে।
-
+*/
+var getSumOfAll = function (numbers) {
+    var total = numbers.reduce(function (accumulator, currentValue) {
+        return accumulator + currentValue;
+    }, 0);
+    return total;
+};
+console.log(getSumOfAll([20, 30, 56, 90, 10]));
+/*
 
 
 //--------------------------------------------------
