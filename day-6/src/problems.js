@@ -23,40 +23,16 @@ Problem 1 — getTicketPrice
 //     }
 // }
 // console.log(getTicketPrice(95))
-const getStudentResult = (student) => {
-    const totalMarks = student.marks.reduce((accumulator, currentValue) => {
-        return accumulator + currentValue;
-    }, 0);
-    const averageMark = totalMarks / student.marks.length;
-    if (averageMark >= 40) {
-        return {
-            name: student.name,
-            average: averageMark,
-            result: "Passed"
-        };
+const canEdit = (role) => {
+    if (role === "admin" || role === "editor") {
+        return true;
     }
-    else {
-        return {
-            name: student.name,
-            average: averageMark,
-            result: "Failed"
-        };
-    }
+    return false;
 };
-console.log(getStudentResult({
-    name: "Rafi",
-    marks: [80, 75, 90, 85],
-}));
-/*
-Problem 6 — canEdit
-👉 User-এর role অনুযায়ী edit permission দেবে।
-"admin" | "editor" | "viewer"
-admin → true
-editor → true
-viewer → false
-"guest" দিলে TypeScript error হবে।
-মূল বিষয়: ⭐ union type, literal type, type safety
-*/
+console.log(canEdit("admin"));
+console.log(canEdit("editor"));
+console.log(canEdit("viewer"));
+console.log(canEdit("guest"));
 /*
 Problem 7 — findProducts
 👉 Product array থেকে নির্দিষ্ট category-এর products filter করবে।

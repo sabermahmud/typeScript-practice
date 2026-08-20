@@ -111,39 +111,39 @@ Name + average + result return করবে
 মূল বিষয়: object, number[], reduce(), conditional logic, return object
 ⚠️ Empty marks array কী করবে সেটাও ভাবতে হবে।
 */
-type Student = {
-  name: string;
-  marks: number[];
-};
-const getStudentResult = (student: Student) => {
-  const totalMarks = student.marks.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-  },0);
+// type Student = {
+//   name: string;
+//   marks: number[];
+// };
+// const getStudentResult = (student: Student) => {
+//   const totalMarks = student.marks.reduce((accumulator, currentValue) => {
+//     return accumulator + currentValue;
+//   },0);
 
-  const averageMark = totalMarks / student.marks.length;
+//   const averageMark = totalMarks / student.marks.length;
 
-  if(averageMark >= 40){
-    return{
-        name:student.name,
-        average: averageMark,
-        result: "Passed"
-    }
-  }
-  else{
-     return{
-        name:student.name,
-        average: averageMark,
-        result: "Failed"
-    }
-  }
+//   if(averageMark >= 40){
+//     return{
+//         name:student.name,
+//         average: averageMark,
+//         result: "Passed"
+//     }
+//   }
+//   else{
+//      return{
+//         name:student.name,
+//         average: averageMark,
+//         result: "Failed"
+//     }
+//   }
 
-};
-console.log(
-  getStudentResult({
-    name: "Rafi",
-    marks: [80, 75, 90, 85],
-  }),
-);
+// };
+// console.log(
+//   getStudentResult({
+//     name: "Rafi",
+//     marks: [80, 75, 90, 85],
+//   }),
+// );
 /*
 Problem 6 — canEdit
 👉 User-এর role অনুযায়ী edit permission দেবে।
@@ -154,7 +154,17 @@ viewer → false
 "guest" দিলে TypeScript error হবে।
 মূল বিষয়: ⭐ union type, literal type, type safety
 */
-
+type Role = "admin" | "editor" | "viewer" ;
+const canEdit = (role: Role): boolean => {
+  if (role === "admin" || role === "editor") {
+    return true;
+  }
+  return false;
+};
+console.log(canEdit("admin"));
+console.log(canEdit("editor"));
+console.log(canEdit("viewer"));
+console.log(canEdit("guest"));
 /*
 Problem 7 — findProducts
 👉 Product array থেকে নির্দিষ্ট category-এর products filter করবে।
