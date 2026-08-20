@@ -23,25 +23,17 @@ Problem 1 — getTicketPrice
 //     }
 // }
 // console.log(getTicketPrice(95))
-const formatUserProfile = (user) => {
-    return `${user.name} is ${user.age} years old and lives in ${user.city}.`;
+const calculateCartTotal = (products) => {
+    const total = products.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue.price;
+    }, 0);
+    return total;
 };
-console.log(formatUserProfile({
-    name: "Fahim",
-    age: 22,
-    city: "Dhaka"
-}));
-/*
-Problem 4 — calculateCartTotal
-👉 Product-এর array থেকে সব price যোগ করবে।
-Product[]
-প্রতিটি product:
-{
-  name: string;
-  price: number;
-}
-মূল বিষয়: object type, array type, reduce()
-*/
+console.log(calculateCartTotal([
+    { name: "Keyboard", price: 1500 },
+    { name: "Mouse", price: 800 },
+    { name: "USB Cable", price: 300 }
+]));
 /*
 Problem 5 — getStudentResult
 👉 Student-এর marks থেকে:

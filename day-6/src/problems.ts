@@ -58,20 +58,20 @@ Output:
 "Fahim is 22 years old and lives in Dhaka."
 মূল বিষয়: type/interface, object typing, template literal
 */
-type User = {
-    name: string,
-    age: number,
-    city: string
-}
+// type User = {
+//     name: string,
+//     age: number,
+//     city: string
+// }
 
-const formatUserProfile = (user: User): string => {
-  return `${user.name} is ${user.age} years old and lives in ${user.city}.`
-};
-console.log(formatUserProfile({
-    name:"Fahim",
-    age: 22,
-    city:"Dhaka"
-}));
+// const formatUserProfile = (user: User): string => {
+//   return `${user.name} is ${user.age} years old and lives in ${user.city}.`
+// };
+// console.log(formatUserProfile({
+//     name:"Fahim",
+//     age: 22,
+//     city:"Dhaka"
+// }));
 
 
 /*
@@ -85,7 +85,23 @@ Product[]
 }
 মূল বিষয়: object type, array type, reduce()
 */
-
+interface Product {
+    name: string;
+    price:number;
+}
+const calculateCartTotal = (products:Product[]):number => {
+    const total:number = products.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue.price;
+    },0 ) 
+    
+ return total   
+} 
+console.log(calculateCartTotal([
+    { name: "Keyboard", price: 1500 },
+    { name: "Mouse", price: 800 },
+    { name: "USB Cable", price: 300 }
+]
+))
 /*
 Problem 5 — getStudentResult
 👉 Student-এর marks থেকে:
