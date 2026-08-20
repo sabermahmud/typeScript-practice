@@ -73,7 +73,6 @@ Output:
 //     city:"Dhaka"
 // }));
 
-
 /*
 Problem 4 — calculateCartTotal
 👉 Product-এর array থেকে সব price যোগ করবে।
@@ -85,23 +84,23 @@ Product[]
 }
 মূল বিষয়: object type, array type, reduce()
 */
-interface Product {
-    name: string;
-    price:number;
-}
-const calculateCartTotal = (products:Product[]):number => {
-    const total:number = products.reduce((accumulator, currentValue) => {
-        return accumulator + currentValue.price;
-    },0 ) 
-    
- return total   
-} 
-console.log(calculateCartTotal([
-    { name: "Keyboard", price: 1500 },
-    { name: "Mouse", price: 800 },
-    { name: "USB Cable", price: 300 }
-]
-))
+// interface Product {
+//     name: string;
+//     price:number;
+// }
+// const calculateCartTotal = (products:Product[]):number => {
+//     const total:number = products.reduce((accumulator, currentValue) => {
+//         return accumulator + currentValue.price;
+//     },0 )
+
+//  return total
+// }
+// console.log(calculateCartTotal([
+//     { name: "Keyboard", price: 1500 },
+//     { name: "Mouse", price: 800 },
+//     { name: "USB Cable", price: 300 }
+// ]
+// ))
 /*
 Problem 5 — getStudentResult
 👉 Student-এর marks থেকে:
@@ -112,7 +111,39 @@ Name + average + result return করবে
 মূল বিষয়: object, number[], reduce(), conditional logic, return object
 ⚠️ Empty marks array কী করবে সেটাও ভাবতে হবে।
 */
+type Student = {
+  name: string;
+  marks: number[];
+};
+const getStudentResult = (student: Student) => {
+  const totalMarks = student.marks.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  },0);
 
+  const averageMark = totalMarks / student.marks.length;
+
+  if(averageMark >= 40){
+    return{
+        name:student.name,
+        average: averageMark,
+        result: "Passed"
+    }
+  }
+  else{
+     return{
+        name:student.name,
+        average: averageMark,
+        result: "Failed"
+    }
+  }
+
+};
+console.log(
+  getStudentResult({
+    name: "Rafi",
+    marks: [80, 75, 90, 85],
+  }),
+);
 /*
 Problem 6 — canEdit
 👉 User-এর role অনুযায়ী edit permission দেবে।

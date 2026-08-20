@@ -23,27 +23,30 @@ Problem 1 — getTicketPrice
 //     }
 // }
 // console.log(getTicketPrice(95))
-const calculateCartTotal = (products) => {
-    const total = products.reduce((accumulator, currentValue) => {
-        return accumulator + currentValue.price;
+const getStudentResult = (student) => {
+    const totalMarks = student.marks.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue;
     }, 0);
-    return total;
+    const averageMark = totalMarks / student.marks.length;
+    if (averageMark >= 40) {
+        return {
+            name: student.name,
+            average: averageMark,
+            result: "Passed"
+        };
+    }
+    else {
+        return {
+            name: student.name,
+            average: averageMark,
+            result: "Failed"
+        };
+    }
 };
-console.log(calculateCartTotal([
-    { name: "Keyboard", price: 1500 },
-    { name: "Mouse", price: 800 },
-    { name: "USB Cable", price: 300 }
-]));
-/*
-Problem 5 — getStudentResult
-👉 Student-এর marks থেকে:
-Average বের করবে
-average >= 40 হলে "Passed"
-না হলে "Failed"
-Name + average + result return করবে
-মূল বিষয়: object, number[], reduce(), conditional logic, return object
-⚠️ Empty marks array কী করবে সেটাও ভাবতে হবে।
-*/
+console.log(getStudentResult({
+    name: "Rafi",
+    marks: [80, 75, 90, 85],
+}));
 /*
 Problem 6 — canEdit
 👉 User-এর role অনুযায়ী edit permission দেবে।
