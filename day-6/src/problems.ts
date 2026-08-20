@@ -32,21 +32,18 @@ Problem 2 — getStockStatus
 21+ → "In Stock"
 মূল বিষয়: number → string, boundary condition, if/else
 */
-const getStockStatus = (stock:number):string => {
-    if(stock <= 0){
-        return "Out of Stock"
-    }
-    else if(stock <= 5){
-        return "Almost Sold Out"
-    }
-    else if(stock <= 20){
-        return "Available"
-    }
-    else {
-        return "In Stock"
-    }
-}
-console.log(getStockStatus(120))
+// const getStockStatus = (stock: number): string => {
+//   if (stock <= 0) {
+//     return "Out of Stock";
+//   } else if (stock <= 5) {
+//     return "Almost Sold Out";
+//   } else if (stock <= 20) {
+//     return "Available";
+//   } else {
+//     return "In Stock";
+//   }
+// };
+// console.log(getStockStatus(120));
 
 /*
 Problem 3 — formatUserProfile
@@ -61,6 +58,20 @@ Output:
 "Fahim is 22 years old and lives in Dhaka."
 মূল বিষয়: type/interface, object typing, template literal
 */
+type User = {
+    name: string,
+    age: number,
+    city: string
+}
+
+const formatUserProfile = (user: User): string => {
+  return `${user.name} is ${user.age} years old and lives in ${user.city}.`
+};
+console.log(formatUserProfile({
+    name:"Fahim",
+    age: 22,
+    city:"Dhaka"
+}));
 
 
 /*
@@ -75,7 +86,6 @@ Product[]
 মূল বিষয়: object type, array type, reduce()
 */
 
-
 /*
 Problem 5 — getStudentResult
 👉 Student-এর marks থেকে:
@@ -86,7 +96,6 @@ Name + average + result return করবে
 মূল বিষয়: object, number[], reduce(), conditional logic, return object
 ⚠️ Empty marks array কী করবে সেটাও ভাবতে হবে।
 */
-
 
 /*
 Problem 6 — canEdit
@@ -99,7 +108,6 @@ viewer → false
 মূল বিষয়: ⭐ union type, literal type, type safety
 */
 
-
 /*
 Problem 7 — findProducts
 👉 Product array থেকে নির্দিষ্ট category-এর products filter করবে।
@@ -109,7 +117,6 @@ findProducts(products, "phone")
 কিছু না পেলে:[]
 মূল বিষয়: typed array, object type, filter()
 */
-
 
 /*
 Problem 8 — getPatientStatus
@@ -123,7 +130,6 @@ Emergency হলে emergencyLevel থাকবে:
 3 → Moderate
 মূল বিষয়: ⭐⭐ discriminated union, union type, type narrowing
 */
-
 
 /*
 Problem 9 — processTransaction

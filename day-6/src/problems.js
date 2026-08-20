@@ -23,43 +23,14 @@ Problem 1 — getTicketPrice
 //     }
 // }
 // console.log(getTicketPrice(95))
-/*
-Problem 2 — getStockStatus
-👉 Stock quantity অনুযায়ী status return করবে।
-0 → "Out of Stock"
-1–5 → "Almost Sold Out"
-6–20 → "Available"
-21+ → "In Stock"
-মূল বিষয়: number → string, boundary condition, if/else
-*/
-const getStockStatus = (stock) => {
-    if (stock <= 0) {
-        return "Out of Stock";
-    }
-    else if (stock <= 5) {
-        return "Almost Sold Out";
-    }
-    else if (stock <= 20) {
-        return "Available";
-    }
-    else {
-        return "In Stock";
-    }
+const formatUserProfile = (user) => {
+    return `${user.name} is ${user.age} years old and lives in ${user.city}.`;
 };
-console.log(getStockStatus(120));
-/*
-Problem 3 — formatUserProfile
-👉 একটি User object নিয়ে সুন্দর sentence বানাবে।
-User:
-{
-  name: string;
-  age: number;
-  city: string;
-}
-Output:
-"Fahim is 22 years old and lives in Dhaka."
-মূল বিষয়: type/interface, object typing, template literal
-*/
+console.log(formatUserProfile({
+    name: "Fahim",
+    age: 22,
+    city: "Dhaka"
+}));
 /*
 Problem 4 — calculateCartTotal
 👉 Product-এর array থেকে সব price যোগ করবে।
@@ -119,4 +90,4 @@ Problem 9 — processTransaction
 "withdraw" → টাকা বাদ
 balance-এর চেয়ে বেশি withdraw → balance অপরিবর্তিত
 মূল বিষয়: ⭐⭐ discriminated union, type narrowing, conditional logic
-*/ 
+*/
