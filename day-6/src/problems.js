@@ -23,25 +23,24 @@ Problem 1 — getTicketPrice
 //     }
 // }
 // console.log(getTicketPrice(95))
-const canEdit = (role) => {
-    if (role === "admin" || role === "editor") {
-        return true;
+const findProducts = (products) => {
+    if (!Array.isArray(products)) {
+        return "Invalid";
     }
-    return false;
+    else if (products.length <= 0) {
+        return [];
+    }
+    const filteredProducts = products.filter((product) => {
+        return product.category === "phone";
+    });
+    return filteredProducts;
 };
-console.log(canEdit("admin"));
-console.log(canEdit("editor"));
-console.log(canEdit("viewer"));
-console.log(canEdit("guest"));
-/*
-Problem 7 — findProducts
-👉 Product array থেকে নির্দিষ্ট category-এর products filter করবে।
-যেমন:
-findProducts(products, "phone")
-শুধু phone products return করবে।
-কিছু না পেলে:[]
-মূল বিষয়: typed array, object type, filter()
-*/
+console.log(findProducts([
+    { name: "iPhone 15", price: 90000, category: "phone" },
+    { name: "Galaxy S24", price: 85000, category: "phone" },
+    { name: "MacBook Air", price: 120000, category: "laptop" },
+    { name: "Dell XPS", price: 110000, category: "laptop" },
+]));
 /*
 Problem 8 — getPatientStatus
 👉 Patient দুই ধরনের:
