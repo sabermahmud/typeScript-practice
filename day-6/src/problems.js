@@ -23,7 +23,7 @@ Problem 1 — getTicketPrice
 //     }
 // }
 // console.log(getTicketPrice(95))
-const findProducts = (products) => {
+const findProducts = (products, category) => {
     if (!Array.isArray(products)) {
         return "Invalid";
     }
@@ -31,7 +31,7 @@ const findProducts = (products) => {
         return [];
     }
     const filteredProducts = products.filter((product) => {
-        return product.category === "phone";
+        return product.category === category;
     });
     return filteredProducts;
 };
@@ -40,7 +40,7 @@ console.log(findProducts([
     { name: "Galaxy S24", price: 85000, category: "phone" },
     { name: "MacBook Air", price: 120000, category: "laptop" },
     { name: "Dell XPS", price: 110000, category: "laptop" },
-]));
+], "phone"));
 /*
 Problem 8 — getPatientStatus
 👉 Patient দুই ধরনের:

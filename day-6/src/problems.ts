@@ -179,7 +179,7 @@ type Product = {
   price: number;
   category: string;
 };
-const findProducts = (products: Product[]) => {
+const findProducts = (products: Product[], category:string) => {
   if(!Array.isArray(products)){
     return "Invalid"
   }
@@ -187,7 +187,7 @@ const findProducts = (products: Product[]) => {
     return []
   }
   const filteredProducts = products.filter((product) => {
-      return product.category === "phone";
+      return product.category === category;
     }
 );
 
@@ -199,7 +199,7 @@ console.log(
     { name: "Galaxy S24", price: 85000, category: "phone" },
     { name: "MacBook Air", price: 120000, category: "laptop" },
     { name: "Dell XPS", price: 110000, category: "laptop" },
-  ]),
+  ], "phone"),
 );
 /*
 Problem 8 — getPatientStatus
