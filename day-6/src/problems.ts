@@ -212,39 +212,39 @@ Emergency হলে emergencyLevel থাকবে:
 3 → Moderate
 মূল বিষয়: ⭐⭐ discriminated union, union type, type narrowing
 */
-interface GeneralPatient {
-  name: string;
-  age: number;
-  type: "general" ;
-}
+// interface GeneralPatient {
+//   name: string;
+//   age: number;
+//   type: "general" ;
+// }
 
-interface EmergencyPatient {
-  name: string;
-  age: number;
-  type: "emergency" ;
-  emergencyLevel:1 | 2 | 3;
-}
-const getPatientStatus = (patient: GeneralPatient | EmergencyPatient):string => {
-  if (patient.type === "general" ) {
-    return "general Patient";
-  } else if (patient.type === "emergency") {
-    if (patient.emergencyLevel === 1) {
-      return "Critical Patient";
-    } else if (patient.emergencyLevel === 2) {
-      return " Serious Patient";
-    }
-  }
-  return "Moderate Patient";
-};
-console.log(getPatientStatus({ name: "Rahim", age: 35, type: "general" }));
-console.log(
-  getPatientStatus({
-    name: "Karim",
-    age: 60,
-    type: "emergency",
-    emergencyLevel: 3,
-  }),
-);
+// interface EmergencyPatient {
+//   name: string;
+//   age: number;
+//   type: "emergency" ;
+//   emergencyLevel:1 | 2 | 3;
+// }
+// const getPatientStatus = (patient: GeneralPatient | EmergencyPatient):string => {
+//   if (patient.type === "general" ) {
+//     return "general Patient";
+//   } else if (patient.type === "emergency") {
+//     if (patient.emergencyLevel === 1) {
+//       return "Critical Patient";
+//     } else if (patient.emergencyLevel === 2) {
+//       return " Serious Patient";
+//     }
+//   }
+//   return "Moderate Patient";
+// };
+// console.log(getPatientStatus({ name: "Rahim", age: 35, type: "general" }));
+// console.log(
+//   getPatientStatus({
+//     name: "Karim",
+//     age: 60,
+//     type: "emergency",
+//     emergencyLevel: 3,
+//   }),
+// );
 /*
 Problem 9 — processTransaction
 👉 Bank balance-এর উপর transaction চালাবে।
@@ -253,3 +253,23 @@ Problem 9 — processTransaction
 balance-এর চেয়ে বেশি withdraw → balance অপরিবর্তিত
 মূল বিষয়: ⭐⭐ discriminated union, type narrowing, conditional logic
 */
+type Transaction = {
+  type: "deposit" | "withdraw";
+  amount: number;
+};
+
+const processTransaction = (
+  balance: number,
+  transaction: Transaction,
+) => {
+if(transaction.type === "deposit"){
+  return balance + transaction.amount
+}
+if (balance < transaction.amount){
+  return "insufficient balance"
+}
+
+return balance - transaction.amount
+};
+
+console.log(processTransaction(5000, { type: "deposit", amount: 2000 }))
