@@ -174,33 +174,32 @@ findProducts(products, "phone")
 কিছু না পেলে:[]
 মূল বিষয়: typed array, object type, filter()
 */
-type Product = {
-  name: string;
-  price: number;
-  category: string;
-};
-const findProducts = (products: Product[], category:string) => {
-  if(!Array.isArray(products)){
-    return "Invalid"
-  }
-  else if(products.length <= 0){
-    return []
-  }
-  const filteredProducts = products.filter((product) => {
-      return product.category === category;
-    }
-);
+// type Product = {
+//   name: string;
+//   price: number;
+//   category: string;
+// };
+// const findProducts = (products: Product[], category: string) => {
+//   if (products.length <= 0) {
+//     return [];
+//   }
+//   const filteredProducts = products.filter((product) => {
+//     return product.category === category;
+//   });
 
-return filteredProducts
-};
-console.log(
-  findProducts([
-    { name: "iPhone 15", price: 90000, category: "phone" },
-    { name: "Galaxy S24", price: 85000, category: "phone" },
-    { name: "MacBook Air", price: 120000, category: "laptop" },
-    { name: "Dell XPS", price: 110000, category: "laptop" },
-  ], "phone"),
-);
+//   return filteredProducts;
+// };
+// console.log(
+//   findProducts(
+//     [
+//       { name: "iPhone 15", price: 90000, category: "phone" },
+//       { name: "Galaxy S24", price: 85000, category: "phone" },
+//       { name: "MacBook Air", price: 120000, category: "laptop" },
+//       { name: "Dell XPS", price: 110000, category: "laptop" },
+//     ],
+//     "phone",
+//   ),
+// );
 /*
 Problem 8 — getPatientStatus
 👉 Patient দুই ধরনের:
@@ -213,7 +212,39 @@ Emergency হলে emergencyLevel থাকবে:
 3 → Moderate
 মূল বিষয়: ⭐⭐ discriminated union, union type, type narrowing
 */
+interface GeneralPatient {
+  name: string;
+  age: number;
+  type: "general" ;
+}
 
+interface EmergencyPatient {
+  name: string;
+  age: number;
+  type: "emergency" ;
+  emergencyLevel:1 | 2 | 3;
+}
+const getPatientStatus = (patient: GeneralPatient | EmergencyPatient):string => {
+  if (patient.type === "general" ) {
+    return "general Patient";
+  } else if (patient.type === "emergency") {
+    if (patient.emergencyLevel === 1) {
+      return "Critical Patient";
+    } else if (patient.emergencyLevel === 2) {
+      return " Serious Patient";
+    }
+  }
+  return "Moderate Patient";
+};
+console.log(getPatientStatus({ name: "Rahim", age: 35, type: "general" }));
+console.log(
+  getPatientStatus({
+    name: "Karim",
+    age: 60,
+    type: "emergency",
+    emergencyLevel: 3,
+  }),
+);
 /*
 Problem 9 — processTransaction
 👉 Bank balance-এর উপর transaction চালাবে।

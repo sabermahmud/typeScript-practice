@@ -23,36 +23,27 @@ Problem 1 — getTicketPrice
 //     }
 // }
 // console.log(getTicketPrice(95))
-const findProducts = (products, category) => {
-    if (!Array.isArray(products)) {
-        return "Invalid";
+const getPatientStatus = (patient) => {
+    if (patient.type === "general") {
+        return "general Patient";
     }
-    else if (products.length <= 0) {
-        return [];
+    else if (patient.type === "emergency") {
+        if (patient.emergencyLevel === 1) {
+            return "Critical Patient";
+        }
+        else if (patient.emergencyLevel === 2) {
+            return " Serious Patient";
+        }
     }
-    const filteredProducts = products.filter((product) => {
-        return product.category === category;
-    });
-    return filteredProducts;
+    return "Moderate Patient";
 };
-console.log(findProducts([
-    { name: "iPhone 15", price: 90000, category: "phone" },
-    { name: "Galaxy S24", price: 85000, category: "phone" },
-    { name: "MacBook Air", price: 120000, category: "laptop" },
-    { name: "Dell XPS", price: 110000, category: "laptop" },
-], "phone"));
-/*
-Problem 8 — getPatientStatus
-👉 Patient দুই ধরনের:
-"general"
-অথবা
-"emergency"
-Emergency হলে emergencyLevel থাকবে:
-1 → Critical
-2 → Serious
-3 → Moderate
-মূল বিষয়: ⭐⭐ discriminated union, union type, type narrowing
-*/
+console.log(getPatientStatus({ name: "Rahim", age: 35, type: "general" }));
+console.log(getPatientStatus({
+    name: "Karim",
+    age: 60,
+    type: "emergency",
+    emergencyLevel: 3,
+}));
 /*
 Problem 9 — processTransaction
 👉 Bank balance-এর উপর transaction চালাবে।
