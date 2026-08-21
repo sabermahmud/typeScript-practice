@@ -273,3 +273,5 @@ return balance - transaction.amount
 };
 
 console.log(processTransaction(5000, { type: "deposit", amount: 2000 }))
+console.log(processTransaction(5000, { type: "withdraw", amount: 2000 }))
+console.log(processTransaction(5000, { type: "withdraw", amount: 7000 }))
