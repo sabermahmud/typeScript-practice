@@ -33,19 +33,20 @@ Signal অনুযায়ী status:
 81–100 → "Excellent"
 Test: 20, 21, 50, 51, 80, 81
 */
-const getSignalStatus = (strength: number): string => {
-  if (strength <= 20) {
-    return "Weak";
-  } else if (strength <= 50) {
-    return "Fair";
-  } else if (strength <= 80) {
-    return "Good";
-  } else if (strength <= 100) {
-    return "Excellent";
-  }
-  return "!! WArning Over Speed";
-};
-console.log(getSignalStatus(-1));
+// const getSignalStatus = (strength: number): string => {
+//   if (strength <= 20) {
+//     return "Weak";
+//   } else if (strength <= 50) {
+//     return "Fair";
+//   } else if (strength <= 80) {
+//     return "Good";
+//   } else if (strength <= 100) {
+//     return "Excellent";
+//   }
+//   return "!! WArning Over Speed";
+// };
+// console.log(getSignalStatus(20));
+
 /*
 3. Esports Player Card
 Player type/interface তৈরি করো:
@@ -56,7 +57,22 @@ Function: formatPlayerCard(player: Player): string
 Expected:
 "ShadowByte is a Level 42 player from Asia."
 */
+interface Player {
+  username: string;
+  level: number;
+  region: string;
+}
 
+const formatPlayerCard = (player: Player): string => {
+  return `${player.username} is a Level ${player.level} player from ${player.region}.`;
+};
+console.log(
+  formatPlayerCard({
+    username: "ShadowByte",
+    level: 42,
+    region: "Asia",
+  }),
+);
 /*
 4. Total Listening Time
 Track type তৈরি করো:
